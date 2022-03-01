@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { MdSearch } from 'react-icons/md';
 import { CgShoppingCart } from 'react-icons/cg';
 
-export const Container = styled.div`
+export const Container = styled.header`
 	height: 60px;
 	display: flex;
 	align-items: center;
