@@ -13,13 +13,16 @@ import {
 	CartCount,
 } from './HeaderElements';
 import Logo from '../../images/logo.svg';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 	return (
 		<Container>
-			<ImgContainer>
-				<img src={Logo} alt="logo" />
-			</ImgContainer>
+			<Link to="/">
+				<ImgContainer>
+					<img src={Logo} alt="logo" />
+				</ImgContainer>
+			</Link>
 
 			<SearchBarContainer>
 				<input type="text" />
@@ -38,10 +41,12 @@ const Header = () => {
 					<LineOne>Your</LineOne>
 					<LineTwo>Prime</LineTwo>
 				</NavOption>
-				<NavOptionCart>
-					<Cart />
-					<CartCount>0</CartCount>
-				</NavOptionCart>
+				<Link to="/checkout">
+					<NavOptionCart>
+						<Cart />
+						<CartCount>0</CartCount>
+					</NavOptionCart>
+				</Link>
 			</Nav>
 		</Container>
 	);

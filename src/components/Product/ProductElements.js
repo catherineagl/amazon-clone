@@ -28,6 +28,7 @@ export const ProductContainer = styled.div`
 	}
 `;
 export const ProductInfo = styled.div`
+	width: 90%;
 	height: 100px;
 	margin-bottom: 15px;
 `;
