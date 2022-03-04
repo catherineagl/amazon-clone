@@ -40,14 +40,31 @@ export const ImgSlider = styled(Slider)`
 	.slick-next {
 		top: 25%;
 	}
+
+	@media screen and (max-width: 480px) {
+		.slick-arrow {
+			margin: 0;
+		}
+	}
 `;
 
 //END SLIDER ELEMENTS///
 
 //STARTING PRODUCTS ROWS
 export const Content = styled.div`
-	transform: translateY(-150px); //
+	//transform: translateY(-150px); //
 	margin: auto;
+	margin-top: -250px;
+
+	@media screen and (max-width: 1080px) {
+		margin-top: -200px;
+	}
+	@media screen and (max-width: 768px) {
+		margin-top: -100px;
+	}
+	@media screen and (max-width: 480px) {
+		margin-top: -50px;
+	}
 `;
 
 export const Row = styled.div`

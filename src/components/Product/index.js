@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
 	ProductContainer,
 	ProductInfo,
 	ProductPrice,
 	ProductRating,
 } from './ProductElements';
-
-import { MdStarOutline } from 'react-icons/md';
 import { MdStar } from 'react-icons/md';
-import { MdStarHalf } from 'react-icons/md';
+import { StateContext } from '../../context/StateProvider';
 
 const Product = ({ id, title, price, image, rating }) => {
+	const { addToCart } = useContext(StateContext);
+
+	const handleClick = () => {
+		addToCart({ id, title, price, image, rating });
+	};
+
 	return (
 		<ProductContainer>
 			<ProductInfo>
@@ -28,7 +32,7 @@ const Product = ({ id, title, price, image, rating }) => {
 				</ProductRating>
 			</ProductInfo>
 			<img src={image} alt="" />
-			<button>Add to cart</button>
+			<button onClick={handleClick}>Add to cart</button>
 		</ProductContainer>
 	);
 };

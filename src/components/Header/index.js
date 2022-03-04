@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
 	Container,
 	ImgContainer,
@@ -14,8 +14,11 @@ import {
 } from './HeaderElements';
 import Logo from '../../images/logo.svg';
 import { Link } from 'react-router-dom';
+import { StateContext } from '../../context/StateProvider';
 
 const Header = () => {
+	const { cart } = useContext(StateContext);
+
 	return (
 		<Container>
 			<Link to="/">
@@ -44,7 +47,7 @@ const Header = () => {
 				<Link to="/checkout">
 					<NavOptionCart>
 						<Cart />
-						<CartCount>0</CartCount>
+						<CartCount>{cart?.length}</CartCount>
 					</NavOptionCart>
 				</Link>
 			</Nav>

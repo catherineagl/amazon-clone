@@ -11,6 +11,7 @@ import {
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Product from '../Product';
+import uniqid from 'uniqid';
 
 let settings = {
 	dots: false,
@@ -55,18 +56,20 @@ const Home = () => {
 							price={28.99}
 							image="https://m.media-amazon.com/images/I/41LR93r46HL._AC_SY200_.jpg"
 							rating={4}
+							id={uniqid()}
 						/>
 						<Product
 							title="Nintendo Switch with Neon Blue and Neon Red Joy‑Con - HAC-001(-01)"
 							price={299.0}
 							image="https://m.media-amazon.com/images/I/61-PblYntsL._AC_UY218_.jpg"
 							rating={5}
+							id={uniqid()}
 						/>
 					</Row>
 					<Row>
-						<Product></Product>
-						<Product></Product>
-						<Product></Product>
+						<Product />
+						<Product />
+						<Product />
 					</Row>
 					<Row>
 						<Product
@@ -74,6 +77,7 @@ const Home = () => {
 							price={900}
 							image="https://m.media-amazon.com/images/I/71LJJrKbezL._AC_UY218_.jpg"
 							rating={5}
+							id={uniqid()}
 						/>
 					</Row>
 				</Content>
