@@ -2,6 +2,7 @@ import {
 	ADD_TO_CART,
 	CHANGE_CART_QTY,
 	REMOVE_FROM_CART,
+	SET_USER,
 } from '../actions/cartAction';
 
 /* export const getCartTotal = (cart) =>
@@ -32,6 +33,12 @@ const reducer = (state, action) => {
 						? (item.quantity = action.payload.qty)
 						: item.quantity
 				),
+			};
+
+		case SET_USER:
+			return {
+				...state,
+				user: action.payload,
 			};
 		default:
 			return state;

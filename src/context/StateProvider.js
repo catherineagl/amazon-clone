@@ -3,12 +3,13 @@ import reducer from './reducer';
 import {
 	ADD_TO_CART,
 	CHANGE_CART_QTY,
-	INCREMENT_QUANTITY,
 	REMOVE_FROM_CART,
+	SET_USER,
 } from '../actions/cartAction';
 
 const initialState = {
 	cart: [],
+	user: null,
 };
 
 export const StateContext = createContext(initialState);
@@ -27,18 +28,25 @@ export const StateProvider = ({ children }) => {
 		dispatch({ type: REMOVE_FROM_CART, payload: id });
 	};
 
-	/* 	const incrementProductQty = (id) => {
-		dispatch({
-			type: INCREMENT_QUANTITY,
-			payload: id,
-		});
-	}; */
-
 	const changeCartQty = (id, qty) => {
 		dispatch({
 			type: CHANGE_CART_QTY,
 			payload: { id, qty },
 		});
+	};
+
+	const setUser = (user) => {
+		if (user) {
+			dispatch({
+				type: SET_USER,
+				payload: user,
+			});
+		} else {
+			dispatch({
+				type: SET_USER,
+				payload: null,
+			});
+		}
 	};
 
 	return (
@@ -48,6 +56,7 @@ export const StateProvider = ({ children }) => {
 				addToCart,
 				removeFromCart,
 				changeCartQty,
+				setUser,
 			}}
 		>
 			{children}

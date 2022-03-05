@@ -88,12 +88,19 @@ export const LoginRegisterBtn = styled.button`
 	background: linear-gradient(to bottom, #f7f8fa, #e7e9ec);
 	cursor: pointer;
 	transition: 0.3s;
+	&:hover {
+		background: #e7e9ec;
+	}
+`;
+
+export const Login = styled.div`
+	display: flex;
+	margin-top: 10px;
+	font-size: 11px;
 
 	a {
 		text-decoration: none;
-		color: #000;
-	}
-	&:hover {
-		background: #e7e9ec;
+		color: blue;
+		margin-left: 2.5px;
 	}
 `;

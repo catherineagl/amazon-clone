@@ -15,9 +15,18 @@ import {
 import Logo from '../../images/logo.svg';
 import { Link } from 'react-router-dom';
 import { StateContext } from '../../context/StateProvider';
+import { signOut } from 'firebase/auth';
+import { auth } from '../../firebase';
 
 const Header = ({ setLogin }) => {
-	const { cart } = useContext(StateContext);
+	const { cart, user } = useContext(StateContext);
+
+	const handleAuthentication = async () => {
+		if (user) {
+			await signOut(auth);
+			console.log('signing out');
+		}
+	};
 
 	return (
 		<Container>
@@ -32,10 +41,10 @@ const Header = ({ setLogin }) => {
 				<SearchIcon />
 			</SearchBarContainer>
 			<Nav>
-				<NavOption>
-					<Link to="/login" onClick={() => setLogin(true)}>
-						<LineOne>Hello Guest</LineOne>
-						<LineTwo>Sign In</LineTwo>
+				<NavOption onClick={handleAuthentication}>
+					<Link to={!user && '/login'} onClick={() => !user && setLogin(true)}>
+						<LineOne>Hello, {user ? user.email : 'Guest'}</LineOne>
+						<LineTwo>{user ? 'Sign Out' : 'Sign In'}</LineTwo>
 					</Link>
 				</NavOption>
 				<NavOption>
