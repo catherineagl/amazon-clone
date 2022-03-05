@@ -15,7 +15,7 @@ import CheckoutProduct from '../CheckoutProduct';
 import { StateContext } from '../../context/StateProvider';
 
 const Checkout = () => {
-	const { cart } = useContext(StateContext);
+	const { cart, user } = useContext(StateContext);
 	return (
 		<Container>
 			<ColumnLeft>
@@ -23,6 +23,7 @@ const Checkout = () => {
 					<img src={Ad} alt="" />
 				</CheckoutAd>
 				<div>
+					<h3>Hello, {user ? user.email : 'Guest'}</h3>
 					<CheckoutTitle>
 						Your shopping Cart {cart.length < 1 && 'is empty'}
 					</CheckoutTitle>

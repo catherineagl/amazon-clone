@@ -24,7 +24,6 @@ const Header = ({ setLogin }) => {
 	const handleAuthentication = async () => {
 		if (user) {
 			await signOut(auth);
-			console.log('signing out');
 		}
 	};
 

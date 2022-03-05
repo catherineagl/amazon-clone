@@ -9,10 +9,12 @@ export const Container = styled.div`
 `;
 export const CheckoutAd = styled.div`
 	width: 100%;
-	margin-bottom: 10px;
+	margin-bottom: 30px;
 `;
 export const ColumnLeft = styled.div``;
-export const CheckoutTitle = styled.h2``;
+export const CheckoutTitle = styled.h2`
+	margin-bottom: 50px;
+`;
 export const ColumnRight = styled(ColumnLeft)``;
 export const EmptyCart = styled.div`
 	max-width: 400px;
