@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
 	display: flex;
 	padding: 20px;
+	justify-content: space-between;
 	background-color: white;
 	height: max-content;
 `;
@@ -13,3 +14,10 @@ export const CheckoutAd = styled.div`
 export const ColumnLeft = styled.div``;
 export const CheckoutTitle = styled.h2``;
 export const ColumnRight = styled(ColumnLeft)``;
+export const EmptyCart = styled.div`
+	max-width: 400px;
+
+	img {
+		width: 100%;
+	}
+`;

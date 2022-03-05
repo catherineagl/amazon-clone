@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Container, SubtotalGift } from './SubtotalElements';
 import CurrencyFormat from 'react-currency-format';
 import { StateContext } from '../../context/StateProvider';
-import { getCartTotal } from '../../reducers/reducer';
+import { getCartTotal } from '../../context/reducer';
 
 const Subtotal = () => {
 	const { cart } = useContext(StateContext);

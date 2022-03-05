@@ -12,7 +12,7 @@ const Product = ({ id, title, price, image, rating }) => {
 	const { addToCart } = useContext(StateContext);
 
 	const handleClick = () => {
-		addToCart({ id, title, price, image, rating });
+		addToCart({ id, title, price, image, rating, quantity: 1 });
 	};
 
 	return (

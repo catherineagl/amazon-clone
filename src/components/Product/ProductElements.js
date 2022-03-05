@@ -20,6 +20,7 @@ export const ProductContainer = styled.div`
 	}
 
 	button {
+		padding: 0.25rem;
 		background-color: #f0c14b;
 		border: 1px solid;
 		margin-top: 10px;
