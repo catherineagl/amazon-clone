@@ -27,7 +27,7 @@ const Product = ({ id, title, price, image, rating }) => {
 					{Array(rating)
 						.fill()
 						.map((_, i) => (
-							<MdStar />
+							<MdStar key={i} />
 						))}
 				</ProductRating>
 			</ProductInfo>

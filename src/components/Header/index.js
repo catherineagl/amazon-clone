@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import {
 	Container,
 	ImgContainer,
@@ -16,7 +16,7 @@ import Logo from '../../images/logo.svg';
 import { Link } from 'react-router-dom';
 import { StateContext } from '../../context/StateProvider';
 
-const Header = () => {
+const Header = ({ setLogin }) => {
 	const { cart } = useContext(StateContext);
 
 	return (
@@ -33,8 +33,10 @@ const Header = () => {
 			</SearchBarContainer>
 			<Nav>
 				<NavOption>
-					<LineOne>Hello Guest</LineOne>
-					<LineTwo>Sign In</LineTwo>
+					<Link to="/login" onClick={() => setLogin(true)}>
+						<LineOne>Hello Guest</LineOne>
+						<LineTwo>Sign In</LineTwo>
+					</Link>
 				</NavOption>
 				<NavOption>
 					<LineOne>Returns</LineOne>

@@ -68,21 +68,21 @@ const Home = () => {
 					</Row>
 					<Row>
 						<Product
-							title="Apple iPhone 12 (128GB, Blue) [Locked] + Carrier Subscription"
+							title="Apple iPhone 12 (128GB, Blue) [unlocked]"
 							price={984.0}
 							image="https://m.media-amazon.com/images/I/71ZOtNdaZCL._AC_UY218_.jpg"
 							rating={4}
 							id={uniqid()}
 						/>
 						<Product
-							title="Dell Inspiron 15 3511, 15.6 inch FHD Non-Touch Laptop - Intel Core i3-1115G4, 8GB DDR4 RAM, 256GB SSD, Intel UHD Graphics, Windows 11 Home - Carbon Black (Latest Model)"
+							title="Dell Inspiron 15 3511, 15.6 inch FHD Non-Touch Laptop - Intel Core i3-1115G4, 8GB DDR4 RAM, 256GB SSD"
 							price={456.0}
 							image="https://m.media-amazon.com/images/I/81x8wuiiloS._AC_UY218_.jpg"
 							rating={4}
 							id={uniqid()}
 						/>
 						<Product
-							title="Playstation 5 Disc Version PS5 Console - 4K-TV Gaming, 16GB GDDR6 RAM, 8K Output, WiFi 6. Ultra-High Speed 825GB SSD - U Deal"
+							title="Playstation 5 Disc Version PS5 Console - 4K-TV Gaming, 16GB GDDR6 RAM, 8K Output, WiFi 6. 825GB SSD"
 							price={1199.0}
 							image="https://m.media-amazon.com/images/I/61982vi8l4L._AC_UY218_.jpg"
 							rating={5}

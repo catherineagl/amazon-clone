@@ -58,6 +58,13 @@ export const NavOption = styled.div`
 	flex-direction: column;
 	margin: 0 10px;
 	color: white;
+	cursor: pointer;
+	a {
+		display: flex;
+		flex-direction: column;
+		color: white;
+		text-decoration: none;
+	}
 `;
 export const LineOne = styled.span`
 	font-size: 10px;
