@@ -13,11 +13,11 @@ function App() {
 		<Router>
 			<div className="app">
 				<StateProvider>
-					{!login && <Header login={login} setLogin={setLogin} />}
+					{!login && <Header setLogin={setLogin} />}
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/checkout" element={<Checkout />} />
-						<Route path="/login" element={<Login />} />
+						<Route path="/login" element={<Login setLogin={setLogin} />} />
 					</Routes>
 				</StateProvider>
 			</div>
