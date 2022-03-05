@@ -14,6 +14,7 @@ export const CheckoutAd = styled.div`
 export const ColumnLeft = styled.div``;
 export const CheckoutTitle = styled.h2`
 	margin-bottom: 50px;
+	margin-top: 10px;
 `;
 export const ColumnRight = styled(ColumnLeft)``;
 export const EmptyCart = styled.div`

@@ -42,7 +42,7 @@ const Header = ({ setLogin }) => {
 			<Nav>
 				<NavOption onClick={handleAuthentication}>
 					<Link to={!user && '/login'} onClick={() => !user && setLogin(true)}>
-						<LineOne>Hello, {user ? user.email : 'Guest'}</LineOne>
+						<LineOne>{user ? user.email : 'Hello, Guest'}</LineOne>
 						<LineTwo>{user ? 'Sign Out' : 'Sign In'}</LineTwo>
 					</Link>
 				</NavOption>

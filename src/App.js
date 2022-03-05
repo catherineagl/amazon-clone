@@ -11,7 +11,6 @@ import { auth } from './firebase';
 
 function App() {
 	const [login, setLogin] = useState(false);
-
 	const { setUser } = useContext(StateContext);
 
 	useEffect(() => {
@@ -19,11 +18,9 @@ function App() {
 			if (user) {
 				// User is signed in
 				// https://firebase.google.com/docs/reference/js/firebase.User
-
 				setUser(user);
 			} else {
 				// User is signed out
-
 				setUser(null);
 			}
 		});
