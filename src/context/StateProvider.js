@@ -57,6 +57,7 @@ export const StateProvider = ({ children }) => {
 				removeFromCart,
 				changeCartQty,
 				setUser,
+				existInCart,
 			}}
 		>
 			{children}

@@ -5,9 +5,6 @@ import {
 	SET_USER,
 } from '../actions/cartAction';
 
-/* export const getCartTotal = (cart) =>
-	cart?.reduce((amount, item) => item.price + amount, 0);
- */
 export const getCartTotal = (cart) =>
 	cart.reduce((acc, curr) => acc + Number(curr.price) * curr.quantity, 0);
 

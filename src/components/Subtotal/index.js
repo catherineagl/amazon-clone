@@ -3,9 +3,11 @@ import { Container, SubtotalGift } from './SubtotalElements';
 import CurrencyFormat from 'react-currency-format';
 import { StateContext } from '../../context/StateProvider';
 import { getCartTotal } from '../../context/reducer';
+import { useNavigate } from 'react-router-dom';
 
 const Subtotal = () => {
 	const { cart } = useContext(StateContext);
+	const navigate = useNavigate();
 
 	return (
 		<Container>
@@ -28,7 +30,7 @@ const Subtotal = () => {
 				prefix={'$'}
 			/>
 
-			<button>Proceed to Checkout</button>
+			<button onClick={(e) => navigate('/payment')}>Proceed to Checkout</button>
 		</Container>
 	);
 };

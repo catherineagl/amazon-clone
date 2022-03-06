@@ -8,6 +8,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase';
+import Payment from './components/Payment';
 
 function App() {
 	const [login, setLogin] = useState(false);
@@ -35,6 +36,7 @@ function App() {
 					<Route path="/checkout" element={<Checkout />} />
 					<Route path="/login" element={<Login setLogin={setLogin} />} />
 					<Route path="/register" element={<Register setLogin={setLogin} />} />
+					<Route path="/payment" element={<Payment />} />
 				</Routes>
 			</div>
 		</Router>

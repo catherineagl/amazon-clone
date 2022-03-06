@@ -8,11 +8,10 @@ import {
 	EmptyCart,
 } from './CheckoutElements';
 import Subtotal from '../Subtotal/index.js';
-//cart empty
-//https://m.media-amazon.com/images/G/01/cart/empty/kettle-desaturated._CB445243794_.svg
 import Ad from '../../images/ad.png';
 import CheckoutProduct from '../CheckoutProduct';
 import { StateContext } from '../../context/StateProvider';
+import FlipMove from 'react-flip-move';
 
 const Checkout = () => {
 	const { cart, user } = useContext(StateContext);
@@ -27,27 +26,28 @@ const Checkout = () => {
 					<CheckoutTitle>
 						Your shopping Cart {cart.length < 1 && 'is empty'}
 					</CheckoutTitle>
-
-					{cart.length > 0 ? (
-						cart.map((item) => (
-							<CheckoutProduct
-								id={item.id}
-								title={item.title}
-								image={item.image}
-								price={item.price}
-								rating={item.rating}
-								quantity={item.quantity}
-								key={item.id}
-							/>
-						))
-					) : (
-						<EmptyCart>
-							<img
-								src="https://m.media-amazon.com/images/G/01/cart/empty/kettle-desaturated._CB445243794_.svg"
-								alt=""
-							/>
-						</EmptyCart>
-					)}
+					<FlipMove enterAnimation="elevator" leaveAnimation="elevator">
+						{cart.length > 0 ? (
+							cart.map((item) => (
+								<CheckoutProduct
+									id={item.id}
+									title={item.title}
+									image={item.image}
+									price={item.price}
+									rating={item.rating}
+									quantity={item.quantity}
+									key={item.id}
+								/>
+							))
+						) : (
+							<EmptyCart>
+								<img
+									src="https://m.media-amazon.com/images/G/01/cart/empty/kettle-desaturated._CB445243794_.svg"
+									alt=""
+								/>
+							</EmptyCart>
+						)}
+					</FlipMove>
 				</div>
 			</ColumnLeft>
 			<ColumnRight>
