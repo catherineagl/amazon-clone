@@ -31,4 +31,7 @@ export const PaymentAddress = styled.div`
 export const PaymentItems = styled.div`
 	flex: 0.8;
 `;
-export const PaymentDetails = styled.div``;
+export const PaymentDetails = styled.div`
+	flex: 0.8;
+`;
+export const PaymentPriceContainer = styled.div``;

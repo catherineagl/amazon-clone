@@ -13,6 +13,8 @@ import {
 } from './CheckoutProductsElements';
 import { MdStar } from 'react-icons/md';
 import { StateContext } from '../../context/StateProvider';
+import { GrFormSubtract } from 'react-icons/gr';
+import { HiOutlinePlus } from 'react-icons/hi';
 
 const CheckoutProduct = forwardRef(
 	({ id, image, title, price, rating, quantity }, ref) => {
@@ -57,11 +59,11 @@ const CheckoutProduct = forwardRef(
 					</CheckoutProductRating>
 					<CheckoutProductQuantity>
 						<ButtonDecrement onClick={() => handleQty('res')}>
-							-
+							<GrFormSubtract />
 						</ButtonDecrement>
 						<ProductQuantity>{qty}</ProductQuantity>
 						<ButtonIncrement onClick={() => handleQty('sum')}>
-							+
+							<HiOutlinePlus />
 						</ButtonIncrement>
 					</CheckoutProductQuantity>
 					<button onClick={handleClick}>Remove from cart</button>
