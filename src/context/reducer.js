@@ -1,6 +1,7 @@
 import {
 	ADD_TO_CART,
 	CHANGE_CART_QTY,
+	EMPTY_CART,
 	REMOVE_FROM_CART,
 	SET_USER,
 } from '../actions/cartAction';
@@ -36,6 +37,12 @@ const reducer = (state, action) => {
 			return {
 				...state,
 				user: action.payload,
+			};
+
+		case EMPTY_CART:
+			return {
+				...state,
+				cart: [],
 			};
 		default:
 			return state;

@@ -17,7 +17,7 @@ import { GrFormSubtract } from 'react-icons/gr';
 import { HiOutlinePlus } from 'react-icons/hi';
 
 const CheckoutProduct = forwardRef(
-	({ id, image, title, price, rating, quantity }, ref) => {
+	({ id, image, title, price, rating, quantity, isPaid }, ref) => {
 		const { removeFromCart, changeCartQty } = useContext(StateContext);
 		const [qty, setQty] = useState(quantity);
 
@@ -57,16 +57,20 @@ const CheckoutProduct = forwardRef(
 								<MdStar key={i} />
 							))}
 					</CheckoutProductRating>
-					<CheckoutProductQuantity>
-						<ButtonDecrement onClick={() => handleQty('res')}>
-							<GrFormSubtract />
-						</ButtonDecrement>
-						<ProductQuantity>{qty}</ProductQuantity>
-						<ButtonIncrement onClick={() => handleQty('sum')}>
-							<HiOutlinePlus />
-						</ButtonIncrement>
-					</CheckoutProductQuantity>
-					<button onClick={handleClick}>Remove from cart</button>
+					{!isPaid && (
+						<>
+							<CheckoutProductQuantity>
+								<ButtonDecrement onClick={() => handleQty('res')}>
+									<GrFormSubtract />
+								</ButtonDecrement>
+								<ProductQuantity>{qty}</ProductQuantity>
+								<ButtonIncrement onClick={() => handleQty('sum')}>
+									<HiOutlinePlus />
+								</ButtonIncrement>
+							</CheckoutProductQuantity>
+							<button onClick={handleClick}>Remove from cart</button>
+						</>
+					)}
 				</CheckoutProductInfo>
 			</CheckoutProductContainer>
 		);

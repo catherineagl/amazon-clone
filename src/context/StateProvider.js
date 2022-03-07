@@ -3,6 +3,7 @@ import reducer from './reducer';
 import {
 	ADD_TO_CART,
 	CHANGE_CART_QTY,
+	EMPTY_CART,
 	REMOVE_FROM_CART,
 	SET_USER,
 } from '../actions/cartAction';
@@ -49,6 +50,12 @@ export const StateProvider = ({ children }) => {
 		}
 	};
 
+	const emptyCart = () => {
+		dispatch({
+			type: EMPTY_CART,
+		});
+	};
+
 	return (
 		<StateContext.Provider
 			value={{
@@ -58,6 +65,7 @@ export const StateProvider = ({ children }) => {
 				changeCartQty,
 				setUser,
 				existInCart,
+				emptyCart,
 			}}
 		>
 			{children}

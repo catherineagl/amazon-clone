@@ -33,5 +33,24 @@ export const PaymentItems = styled.div`
 `;
 export const PaymentDetails = styled.div`
 	flex: 0.8;
+
+	> form {
+		max-width: 400px;
+		> div > button {
+			background-color: #f0c14b;
+			border-radius: 2px;
+			width: 100%;
+			height: 30px;
+			border: 1px solid;
+			font-weight: bolder;
+			margin-top: 10px;
+			border-color: #a88734 #9c7e31 #846a29;
+			color: #111;
+		}
+	}
+
+	> h4 {
+		padding-bottom: 20px;
+	}
 `;
 export const PaymentPriceContainer = styled.div``;

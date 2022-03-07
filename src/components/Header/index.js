@@ -47,8 +47,10 @@ const Header = ({ setLogin }) => {
 					</Link>
 				</NavOption>
 				<NavOption>
-					<LineOne>Returns</LineOne>
-					<LineTwo>& Orders</LineTwo>
+					<Link to="/orders">
+						<LineOne>Returns</LineOne>
+						<LineTwo>& Orders</LineTwo>
+					</Link>
 				</NavOption>
 				<NavOption>
 					<LineOne>Your</LineOne>

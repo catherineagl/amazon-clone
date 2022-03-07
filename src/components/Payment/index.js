@@ -17,9 +17,11 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import CurrencyFormat from 'react-currency-format';
 import { getCartTotal } from '../../context/reducer';
 import axios from '../../axios';
+import { db } from '../../firebase';
+import { collection, addDoc, doc, setDoc } from 'firebase/firestore';
 
 const Payment = () => {
-	const { user, cart } = useContext(StateContext);
+	const { user, cart, emptyCart } = useContext(StateContext);
 	const navigate = useNavigate();
 
 	const stripe = useStripe();
@@ -43,7 +45,6 @@ const Payment = () => {
 		getClientSecret();
 	}, [cart]);
 
-	console.log('THE SECRET IS:', clientSecret);
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		setProcessing(true);
@@ -55,9 +56,18 @@ const Payment = () => {
 				},
 			})
 			.then(({ paymentIntent }) => {
+				const orders = doc(db, 'users', user.uid, 'orders', paymentIntent.id);
+				const order = {
+					cart: cart,
+					amount: paymentIntent.amount,
+					created: paymentIntent.created,
+				};
+				setDoc(orders, order);
+
 				setSucceded(true);
 				setError(null);
 				setProcessing(false);
+				emptyCart();
 				navigate('/orders');
 			});
 	};

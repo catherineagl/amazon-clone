@@ -31,15 +31,20 @@ export const CheckoutProductRating = styled.div`
 	display: flex;
 `;
 
-export const CheckoutProductQuantity = styled.div``;
+export const CheckoutProductQuantity = styled.div`
+	display: flex;
+	align-items: center;
+`;
 export const ButtonIncrement = styled.button`
-	padding: 0.25rem;
+	display: flex;
+	align-items: center;
+	padding: 0.15rem;
 	background-color: #fff;
 	border: 1px solid;
 	border-color: #a88734 #9c7e31 #846a29;
 	color: #111;
 	margin: 0.25rem;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	font-weight: bold;
 	cursor: pointer;
 `;
