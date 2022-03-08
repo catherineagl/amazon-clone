@@ -2,6 +2,14 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 	background-color: white;
+
+	h1 {
+		text-align: center;
+		padding: 2rem;
+		a {
+			text-decoration: none;
+		}
+	}
 `;
 export const PaymentContainer = styled.div`
 	> h1 {

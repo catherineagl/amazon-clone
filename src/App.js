@@ -45,7 +45,7 @@ function App() {
 							path="/register"
 							element={<Register setLogin={setLogin} />}
 						/>
-						<Route path="/payment" element={<Payment />} />
+						<Route path="/payment" element={<Payment setLogin={setLogin} />} />
 						<Route path="/orders" element={<Orders setLogin={setLogin} />} />
 					</Routes>
 				</div>
